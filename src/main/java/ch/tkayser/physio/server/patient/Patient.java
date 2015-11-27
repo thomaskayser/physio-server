@@ -1,6 +1,6 @@
-package ch.tkayser.physio.patient;
+package ch.tkayser.physio.server.patient;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 /**
  * Created by Tom on 24.11.15.
@@ -8,8 +8,15 @@ import javax.persistence.Entity;
 @Entity
 public class Patient {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqGen")
+    @SequenceGenerator(name = "seqGen", sequenceName = "PATEINT_SEQ")
     private long id;
+
+    @Column
     private String lastName;
+
+    @Column
     private String firstName;
 
     public long getId() {

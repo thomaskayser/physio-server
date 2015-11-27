@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:form>
+<p:tabMenu activeIndex="#{param.menuindex}">
+        <p:menuitem value="Patienten" outcome="patienten">
+                <f:param name="menuindex" value = "0" />
+        </p:menuitem>
+        <p:menuitem value="Behandlungen" outcome="behandlungen">
+            <f:param name="menuindex" value = "1" />
+        </p:menuitem>
+        <p:menuitem value="Abrechnung" outcome="abrechnungen">
+           <f:param name="menuindex" value = "2" />
+    </p:menuitem>
+</p:tabMenu>
+</h:form>
+
+</html>
