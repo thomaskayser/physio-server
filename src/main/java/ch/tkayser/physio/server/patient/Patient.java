@@ -1,6 +1,7 @@
 package ch.tkayser.physio.server.patient;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by Tom on 24.11.15.
@@ -18,6 +19,10 @@ public class Patient {
 
     @Column
     private String firstName;
+
+    @Column
+    @Temporal(TemporalType.DATE)
+    private Date birthDate;
 
     public long getId() {
         return id;
@@ -41,5 +46,13 @@ public class Patient {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 }
