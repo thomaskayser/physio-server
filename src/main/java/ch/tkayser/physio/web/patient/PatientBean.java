@@ -1,4 +1,4 @@
-package PatientSuche;
+package ch.tkayser.physio.web.patient;
 
 import ch.tkayser.physio.server.patient.Patient;
 import ch.tkayser.physio.server.patient.PatientService;

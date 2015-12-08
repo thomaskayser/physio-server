@@ -1,6 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven Repository</name>
+            <layout>default</layout>
+            <url>http://repo1.maven.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>ch.tkayser</groupId>
     <artifactId>physio</artifactId>
@@ -8,6 +20,8 @@
     <packaging>war</packaging>
 
     <dependencies>
+
+        <!-- PROVIDED DEPENDENCIES -->
 
         <!-- JEE -->
         <dependency>
@@ -33,10 +47,43 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- NON PROVIDED DEPENDENCIES -->
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
             <version>${primefaces.version}</version>
+        </dependency>
+
+        <!-- Google api claneder -->
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-calendar</artifactId>
+            <version>v3-rev154-1.21.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.http-client</groupId>
+            <artifactId>google-http-client-jackson2</artifactId>
+            <version>1.21.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.oauth-client</groupId>
+            <artifactId>google-oauth-client-jetty</artifactId>
+            <version>1.21.0</version>
+        </dependency>
+
+        <!-- PDF -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>${itext.version}</version>
+        </dependency>
+
+        <!-- TEST Dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
         </dependency>
 
 
@@ -51,10 +98,20 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
+        <!-- Versions -->
+
+        <!-- Provided stuff -->
         <jee.version>7.0</jee.version>
         <eclipselinke.version>2.6.1</eclipselinke.version>
         <jsf.version>2.1.7</jsf.version>
+
+        <!-- Non provied -->
         <primefaces.version>5.3</primefaces.version>
+        <googleapi.version>1.20.0</googleapi.version>
+        <itext.version>5.5.4</itext.version>
+
+        <!-- Test -->
+        <junit.version>4.11</junit.version>
     </properties>
 
 </project>
